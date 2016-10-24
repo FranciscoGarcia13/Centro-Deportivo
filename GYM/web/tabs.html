@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>jQuery UI Tabs - Default functionality</title>
+        <link rel="stylesheet" href="assets/css/misEstilos.css">
+        <script src = "assets/js/jquery-ui/external/jquery/jquery.js"></script>
+        <script src="assets/js/jquery-ui/jquery-ui.js"></script>
+        <script src="assets/js/FuncionesJS.js"></script>
+        <script>
+            $(function () {
+                $("#tabs").tabs();
+            });
+        </script>
+    </head>
+    <body>
+
+        <div class="center" id="tabs">
+            <ul>
+                <li class="tabs"><a class="lnk" href="#tabs-1">Alta</a></li>
+                <li class="tabs"><a class="lnk" href="#tabs-2" onclick="mostrarDatos(this)">Actualizar</a></li>
+                <li class="tabs"><a class="lnk" href="#tabs-3" onclick="mostrarDatos(this)">Baja</a></li>
+                <li class="tabs"><a class="lnk" href="ADO.html">ADO</a></li>
+            </ul>
+            <div id="tabs-1">
+                <form action = "RegSuc" method="POST">
+                    <label for="nameS">Nombre de la sucursal</label>
+                    <input type="text" id="nameS" name="nameS" placeholder="On The Run" required>
+
+                    <h4><label>Direccion</label></h4>
+                    <label for="calle">Calle</label>
+                    <input type="text" id="calle" name="calle" placeholder="Av. siempre viva" required>
+
+                    <label for="col">Colonia</label>
+                    <input type="text" id="col" name="col" placeholder="A momentary lapse of reason" required>
+
+                    <label for="del">Delegacion o municipio</label>
+                    <input type="text" id="del" name="del" placeholder="Ciudadano del mundo" required>
+
+                    <label for="cp">Codigo postal</label>
+                    <input type="text" id="cp" name="cp" placeholder="1984" onfocusout="verificarCP()" required>
+
+                    <div class="oculto" id="hideCP" title="Codigo Postal no valido" >
+                        <span style="float:left; margin:0 7px 50px 0;"></span>
+                        <p>Introduzca un codigo postal valido. Ejemplo 07510.</p>
+                    </div>
+
+                    <label for="state">Estado</label>
+                    <select id="state" name="state">
+                        <option value="Aguascalientes">Aguascalientes</option>
+                        <option value="Baja California">Baja California</option>
+                        <option value="Baja California sur">Baja California sur</option>
+                        <option value="Campeche">Campeche</option>
+                        <option value="Colima">Colima</option>
+                        <option value="Chiapas">Chiapas</option>
+                        <option value="Ciudad de Mexico">Ciudad de Mexico</option>
+                        <option value="Guerrero">Guerrero</option>
+                        <option value="Jalisco">Jalisco</option>
+                        <option value="Oaxaca">Oaxaca</option>
+                        <option value="Queretaro">Queretaro</option>
+                        <option value="Zacatecas">Zacatecas</option>
+                    </select>
+
+                    <section id="teles">
+                        <h4>Telefono(s)</h4>
+                        <input type="text" id="tel" name="tels" placeholder="01 800 Any colour you like" onfocusout="moreTel()" required>
+                    </section>
+
+                    <section id="mails">
+                        <h4>Mail(s)</h4>
+                        <input type="email" id="email" name="email" placeholder="nile@song.more" onfocusout="moreMail()" required>
+                    </section>
+
+                    <h4>Datos del gerente</h4>
+                    <label for="adminPila">Nombre</label>
+                    <input type="text" id="adminPila" name="adminPila" placeholder="Pink" required>
+
+                    <label for="adminFap">Primer apellido</label>
+                    <input type="text" id="adminFap" name="adminFap" placeholder="Floyd" required>
+
+                    <label for="adminSap">Segundo apellido</label>
+                    <input type="text" id="adminSap" name="adminSap" placeholder="Floyd" required>
+
+                    <label>Direccion</label>
+                    <input type="text" id="dirG" name="dirG" placeholder="calle the wall" required>
+
+                    <input type="reset" value="Reset">
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+
+            <div id="tabs-2">
+                <table id="update" class="tablas">
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre Sucursal</th>
+                        <th>Estado</th>
+                        <th>Telefono</th>
+                        <th>Mail</th>
+                    </tr>
+                    
+                </table>
+            </div>
+
+            <div id="tabs-3">
+                <table id="bajas" class="tablas">
+                    
+                    
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
